@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="main.css" rel="stylesheet"/>
+<!-- Make sure you include jQuery in your page -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+
+  
+  $("#myForm").on("submit", function(event) {
+    event.preventDefault(); // stop normal submission
+
+    // Animate the child elements out (not the <main> itself)
+    $("main").children().fadeOut(500, function() {
+      // Once all children are faded out, clear them
+      $("main").empty();
+
+      // Add new content
+      $("main").append("<h2>Thank you for your feedback!</h2>");
+      $("main").append("<h4>We appreciate your input and will use it to improve our site.</h4>");
+      $('main').append("<h3>Click on any of the buttons below to continue...</h3>")
+      $("main").append('<button id="refreshPage">Click here to refresh the page</button>')
+      $("main").append('<button id="newBtn">Go Home!</button>');
+
+      // Animate the new content in
+      $("main").children().hide().fadeIn(500);
+
+      // Add behavior to the new button
+
+      $("#refreshPage").on("click", function(){
+        location.reload();
+      });
+      $("#newBtn").on("click", function() {
+        window.location.href ="index.html";
+      });
+    });
+  });
+});
+</script>
+<title>Feedback Form</title>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<h1 class="siteTitleHeading">Censorship Awareness</h1>
+</header>
+<div id="columns">
+<nav id="main-menu">
+<h2 style="color:rgb(8, 52, 82)">Menu</h2>
+<ul id="navMenu">
+<li class="menuElement"><a class="menuElement1" href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<!-- Dropdown group -->
+<li class="dropdown">
+<a href="#">Censorship Topics</a>
+<ul class="dropdown-content">
+<li><a href="whatiscensorship.html">What is censorship?</a></li>
+<li><a href="government censorship.html">Government Censorship</a></li>
+<li><a href="mpaa (movie ratings).html">MPAA (Movie Ratings)</a></li>
+<li><a href="fcc (federal communications commission).html">FCC (Federal Communications Commission)</a></li>
+<li><a href="types of censorship.html">Types of Censorship</a></li>
+<li><a href="social media censorship.html">Social Media Censorship</a></li>
+<li><a href="historical censorship.html">Historical Censorship</a></li>
+<li><a href="the debate protection vs. freedom.html">The Debate: Protection vs. Freedom</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#">Website Tools</a>
+<ul class="dropdown-content">
+<li><a href="feedback form.html">Feedback Form</a></li>
+<li><a href="site map.html">Site Map</a></li>
+<li><a href="references.html">References</a></li>
+<li><a href="blanktemplate.html">Black Page template</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+<main>
+<h1>Feedback Form</h1>
+<form id="myForm" style="font-family: Arial;">
+<p>1. How clear was the information presented on our website?</p>
+<input id="veryclear" name="question1" type="radio" value="Very Clear"/>
+<label for="veryclear">HTML</label><br/>
+<input id="mostlyclear" name="question1" type="radio" value="mostly clear"/>
+<label for="mostlyclear">Mostly Clear</label><br/>
+<input id="somewhatclear" name="question1" type="radio" value="Somewhat Clear"/>
+<label for="somewhatclear">Somewhat Clear</label><br/>
+<input id="noclear" name="question1" type="radio" value="Not Clear at all"/>
+<label for="noclear">Not clear at all</label><br/><br/>
+<hr/><br/><br/>
+<p>2. Which tab taught you something new?</p>
+<input id="whatiscensorship" name="question2" type="checkbox" value="What is Censorship?"/>
+<label for="whatiscensorship"> What is Censorship</label><br/>
+<input id="governmentcensorship" name="question2" type="checkbox" value="Government Censorship"/>
+<label for="governmentcensorship"> Government Censorship</label><br/>
+<input id="mpaa" name="question2" type="checkbox" value="mpaa"/>
+<label for="mpaa"> MPAA</label><br/>
+<input id="FCC" name="question2" type="checkbox" value="FCC"/>
+<label for="FCC"> FCC</label><br/>
+<input id="typesofcensorship" name="question2" type="checkbox" value="Types of Censorship"/>
+<label for="typesofcensorship"> Types of Censorship</label><br/>
+<input id="socialmediacensorship" name="question2" type="checkbox" value="Social Media Censorship"/>
+<label for="socialmediacensorship"> Social Media Censorship</label><br/>
+<input id="historicalcensorship" name="question2" type="checkbox" value="Historical Censorship"/>
+<label for="historicalcensorship"> Historical Censorship</label><br/>
+<input id="protectionvsfreedom" name="question2" type="checkbox" value="Protection vs. Freedom"/>
+<label for="protectionvsfreedom"> Protection vs. Freedom</label><br/>
+<input id="other" name="question2" type="checkbox" value="Other"/>
+<label for="other"> Other </label><input id="other" name="other" type="text"/><br/><br/>
+<hr/><br/><br/>
+<p>3. What topic was the most interesting to you?</p>
+<textarea cols="30" name="message" rows="10">
+
+</textarea><br/><br/>
+<hr/><br/><br/>
+<p>4. Was anything too hard or confusing to understand?</p>
+<input id="yes" name="yesno" type="radio" value="yes"/>
+<label for="yes">Yes</label><br/>
+<input id="no" name="yesno" type="radio" value="no"/>
+<label for="no">No</label><br/><br/>
+<div id="message">
+<script>
+
+              const radios = document.querySelectorAll('input[name="yesno"]');
+              const message = document.getElementById("message");
+
+              radios.forEach(radio => {
+                radio.addEventListener("change", function () {
+                  if (this.value === "yes") {
+                    message.style.display = "block";
+                    message.innerHTML = `<p>If yes, please explain what part you don't understand</p>
+          <textarea name="whyyes" cols="38" rows="9"></textarea>`;
+                  } else {
+                    message.style.display = "none";
+                    message.innerHTML = "";
+                  }
+                });
+              });
+
+
+
+            </script>
+</div>
+<br/>
+<hr/><br/>
+<p>5. How would you rate the design of the website?</p>
+<input id="5" name="ratingSite" type="radio"/>
+<label for="5">5</label><br/>
+<input id="4" name="ratingSite" type="radio"/>
+<label for="4">4</label><br/>
+<input id="3" name="ratingSite" type="radio"/>
+<label for="3">3</label><br/>
+<input id="2" name="ratingSite" type="radio"/>
+<label for="2">2</label><br/>
+<input id="1" name="ratingSite" type="radio"/>
+<label for="1">1</label> <br/><br/><br/><br/>
+<p>6. Do you think censorship is helpful? Why?</p>
+<textarea cols="38" id="whycensorship1" name="whycensorship" rows="13"></textarea><br/><br/>
+<hr/><br/><br/>
+<p>7. What topic do you think we should add in the future? </p>
+<textarea cols="30" id="suggestTopics" name="suggestTopics" rows="10"></textarea>
+<br/><br/>
+<hr/><br/><br/>
+<p>Any additional comments/suggestions? </p>
+<textarea cols="30" id="questcomment" name="questionscomments" rows="10"></textarea>
+<br/><br/>
+<hr/><br/>
+<input type="submit" value="Submit"/>
+<input type="reset" value="Clear Form"/>
+</form>
+</main>
+</div>
+<footer>
+<p>This website was originally designed by college students from <a href="https://www.towson.edu">Towson University.</a></p>
+</footer>
+</div>
+</body>
+</html>

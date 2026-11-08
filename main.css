@@ -1,0 +1,156 @@
+/* Header and footer span full width */
+header,
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+header{
+    background-color: #1A2A6C;
+}
+
+
+footer {
+    background-color: #2C2C2C; /* charcoal gray for balance */
+    color: #F2F2F2;            /* light gray text */
+    font-style: italic;
+    text-align: center;
+    padding: 15px;
+}
+
+footer a {
+    color: #FFD700;            /* gold accent for visibility */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #FFFFFF;            /* white hover */
+    text-decoration: underline;
+}
+
+#wrapper {
+    width: 90%;
+    margin: auto;
+    background-color: rgb(117, 116, 115);
+}
+
+#columns {
+    display: table;
+    width: 100%; /* same width as header/footer */
+}
+
+nav,
+main {
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px;
+}
+
+nav {
+    width: 25%;
+    background-color: #4d92ec;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: Arial;
+    color: #FFFFFF;
+    display: block;
+    padding: 8px;
+    font-weight: bold;   /* correct way to set bold */
+}
+
+nav a:hover {
+    background-color: #DD0303; /* urgent red hover */
+    color: #FFFFFF;
+}
+
+main {
+    display: table-cell;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; /* keeps padding inside width */
+    vertical-align: top; /* aligns content at the top */
+    background-color: #bdcdd7;
+}
+
+/* Background image */
+body {
+    background-image: url(library.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+}
+
+.menuElement {
+    font-size: 16px;
+    font-family: Arial;
+}
+
+#navMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    font-weight: bold;
+}
+
+.dropdown-content {
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    left: 100%; /* makes submenu appear to the right */
+    top: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0;
+}
+
+.dropdown-content ul{
+    list-style-type: none;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Typography */
+h2, h3, h4, h5, h6,
+p, ul, ol {
+    font-family: Arial;
+}
+
+ol li,
+ul li {
+    margin-bottom: 10px;
+}
+
+.siteTitleHeading {
+    color: white;
+}

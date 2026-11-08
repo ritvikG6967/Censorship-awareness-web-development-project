@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="main.css" rel="stylesheet"/>
+<style>
+ .citation2 {
+    margin-bottom: 15px;
+    font-family: Arial;
+ }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $("a.citation1").each(function() {
+        // Get the href value
+        var link = $(this).attr("href");
+        // Set it as the text inside the anchor
+        $(this).text(link);
+      });
+    });
+</script>
+<title>References</title>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<h1 class="siteTitleHeading">Censorship Awareness</h1>
+</header>
+<div id="columns">
+<nav id="main-menu">
+<h2 style="color:rgb(8, 52, 82)">Menu</h2>
+<ul id="navMenu">
+<li class="menuElement"><a class="menuElement1" href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<!-- Dropdown group -->
+<li class="dropdown">
+<a href="#">Censorship Topics</a>
+<ul class="dropdown-content">
+<li><a href="whatiscensorship.html">What is censorship?</a></li>
+<li><a href="government censorship.html">Government Censorship</a></li>
+<li><a href="mpaa (movie ratings).html">MPAA (Movie Ratings)</a></li>
+<li><a href="fcc (federal communications commission).html">FCC (Federal Communications Commission)</a></li>
+<li><a href="types of censorship.html">Types of Censorship</a></li>
+<li><a href="social media censorship.html">Social Media Censorship</a></li>
+<li><a href="historical censorship.html">Historical Censorship</a></li>
+<li><a href="the debate protection vs. freedom.html">The Debate: Protection vs. Freedom</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#">Website Tools</a>
+<ul class="dropdown-content">
+<li><a href="feedback form.html">Feedback Form</a></li>
+<li><a href="site map.html">Site Map</a></li>
+<li><a href="references.html">References</a></li>
+<li><a href="blanktemplate.html">Black Page template</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+<main>
+<h1>References</h1>
+<ol>
+<li class="citation2">Motion Picture Association. Film Ratings. <br/><a class="citation1" href="https://www.motionpictures.org/film-ratings/"></a></li>
+<li class="citation2">Federal Communications Commission. Consumer Information. <br/><a class="citation1" href="http://www.fcc.gov/consumers"></a></li>
+<li class="citation2">American Library Association. Freedom to Read &amp; Censorship Resources. <br/><a class="citation1" href="https://www.ala.org/"></a></li>
+<li class="citation2">UNESCO. Freedom of Expression and Censorship. <br/><a class="citation1" href="https://www.unesco.org/en"></a></li>
+<li class="citation2">Common Sense Media. Parents’ Guide to Media Ratings. <br/><a class="citation1" href="https://www.commonsensemedia.org/"></a></li>
+</ol>
+</main>
+</div>
+<footer>
+<p>This website was originally designed by college students from <a href="https://www.towson.edu">Towson University.</a></p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="main.css" rel="stylesheet"/>
+<style>
+    .button,
+    .homebutton {
+      display: block;
+
+      /* Optional: Add other styling for appearance */
+      padding: 18px 26px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      text-align: center;
+      font-size: 18px;
+      cursor: pointer;
+
+    }
+
+    .button {
+      margin-left: 60px;
+    }
+
+
+.homebutton{
+  width: 75%;
+}
+
+
+    .button:hover,
+    .homebutton:hover {
+      background-color: #FFA500;
+      /* Background color on hover */
+      color: black;
+      /* Text color on hover */
+    }
+  </style>
+<script>
+    const navLinks = document.querySelectorAll("#navMenu a");
+    const buttons = document.querySelectorAll(".button");
+
+    buttons.forEach((btn) => {
+      btn.textContent = navLinks.textContent; // redisplay nav text
+    });
+
+  </script>
+<title>Site Map</title>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<h1 class="siteTitleHeading">Censorship Awareness</h1>
+</header>
+<div id="columns">
+<nav id="main-menu">
+<h2 style="color:rgb(8, 52, 82)">Menu</h2>
+<ul id="navMenu">
+<li class="menuElement"><a class="menuElement1" href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<!-- Dropdown group -->
+<li class="dropdown">
+<a href="#">Censorship Topics</a>
+<ul class="dropdown-content">
+<li><a href="whatiscensorship.html">What is censorship?</a></li>
+<li><a href="government censorship.html">Government Censorship</a></li>
+<li><a href="mpaa (movie ratings).html">MPAA (Movie Ratings)</a></li>
+<li><a href="fcc (federal communications commission).html">FCC (Federal Communications Commission)</a></li>
+<li><a href="types of censorship.html">Types of Censorship</a></li>
+<li><a href="social media censorship.html">Social Media Censorship</a></li>
+<li><a href="historical censorship.html">Historical Censorship</a></li>
+<li><a href="the debate protection vs. freedom.html">The Debate: Protection vs. Freedom</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#">Website Tools</a>
+<ul class="dropdown-content">
+<li><a href="feedback form.html">Feedback Form</a></li>
+<li><a href="site map.html">Site Map</a></li>
+<li><a href="references.html">References</a></li>
+<li><a href="blanktemplate.html">Black Page template</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+<main>
+<div id="sitemaparea">
+<h1>Site Map</h1>
+<button class="homebutton" onclick="window.location.href='index.html'"><img alt="Home" src="images.jpg" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;"/>Home</button><br/><br/>
+<button class="homebutton" onclick="window.location.href='about.html'">About</button><br/><br/>
+
+<h2>Censorship Topics</h2>
+<button class="button" onclick="window.location.href='whatiscensorship.html'">What is
+            censorship?</button><br/><br/>
+<button class="button" onclick="window.location.href='government censorship.html'">Government
+            Censorship</button><br/><br/>
+<button class="button" onclick="window.location.href='mpaa (movie ratings).html'">MPAA (Movie
+            Ratings)</button><br/><br/>
+<button class="button" onclick="window.location.href='fcc (federal communications commission).html'">FCC
+            (Federal Communications
+            Commission)</button><br/><br/>
+<button class="button" onclick="window.location.href='types of censorship.html'">Types of
+            Censorship</button><br/><br/>
+<button class="button" onclick="window.location.href='social media censorship.html'">Social Media
+            Censorship</button><br/><br/>
+<button class="button" onclick="window.location.href='historical censorship.html'">Historical
+            Censorship</button><br/><br/>
+<button class="button" onclick="window.location.href='the debate protection vs. freedom.html'">The Debate:
+            Protection vs. Freedom</button><br/><br/>
+<h2>Website Tools</h2>            
+<button class="button" onclick="window.location.href='blanktemplate.html'">Black Page
+            template</button><br/><br/>
+<button class="button" onclick="window.location.href='feedback form.html'">Feedback Form</button><br/><br/>
+<button class="button" onclick="window.location.href='references.html'">References</button><br/><br/>
+<button class="button" onclick="window.location.href='site map.html'">Site Map</button><br/><br/>
+</div>
+</main>
+</div>
+<footer>
+<p>This website was originally designed by college students from <a href="https://www.towson.edu">Towson University.</a></p>
+</footer>
+</div>
+</body>
+</html>
